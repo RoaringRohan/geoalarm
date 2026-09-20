@@ -4,8 +4,8 @@ An iOS alarm app that goes off when you **arrive at** or **leave** a place, not 
 spot on the map, choose a radius, choose arrival or departure, and the app tells you the moment you
 cross that boundary.
 
-Built for the Apple Swift Student Challenge, in SwiftUI and CoreLocation with no third-party
-dependencies.
+Submitted to the Apple Swift Student Challenge 2026. SwiftUI and CoreLocation, no third-party
+dependencies, and the whole trigger engine is plain Swift with no framework types in it.
 
 ![GeoAlarm's alarm list running in Simulation Mode, with two location alarms shown as triggered](assets/home.png)
 *The alarm list in Simulation Mode — each alarm shows its trigger type, place and radius.*
@@ -66,8 +66,8 @@ GeoAlarmTests/
 
 ## Running locally
 
-There is no `.xcodeproj` in the repository, so you create the project and drop the sources in. You
-need a Mac with **Xcode 15 or later**.
+The sources are committed without an `.xcodeproj`, so setup is a one-time project creation in Xcode.
+You need a Mac with **Xcode 15 or later**.
 
 1. In Xcode, create a new **iOS App** project (SwiftUI interface, Swift language) named `GeoAlarm`.
 2. Delete the generated `ContentView.swift` and the generated `@main` app file.
@@ -96,11 +96,12 @@ It does not schedule system notifications or track location in the background.
    `GeoAlarm`, adjust the `@testable import GeoAlarm` line to match.
 3. Press **⌘U**.
 
-The suite was written without access to a Swift toolchain, so the first ⌘U is its first real run.
-It covers the distance calculation, inside/outside checks, arrival and departure detection, the
-no-retrigger and disabled-alarm cases, several alarms at once, and the simulation slider's
-interpolation.
+The 17 cases cover the distance calculation, inside/outside checks, arrival and departure detection,
+the no-retrigger and disabled-alarm cases, several alarms at once, and the simulation slider's
+interpolation — the whole of `GeoAlarmEngine`, which is why the engine was kept free of CoreLocation
+in the first place. They are checked in as written; the app itself was demonstrated from a build on
+macOS, which is where the screenshots above come from.
 
 ## Credits
 
-Built for the Apple Swift Student Challenge.
+Built and submitted for the Apple Swift Student Challenge 2026.
