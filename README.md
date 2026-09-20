@@ -7,6 +7,9 @@ cross that boundary.
 Built for the Apple Swift Student Challenge, in SwiftUI and CoreLocation with no third-party
 dependencies.
 
+![GeoAlarm's alarm list running in Simulation Mode, with two location alarms shown as triggered](assets/home.png)
+*The alarm list in Simulation Mode — each alarm shows its trigger type, place and radius.*
+
 ## Who it's for
 
 Anyone who wants a reminder tied to a place instead of a clock: "tell me when I get to the grocery
@@ -24,6 +27,12 @@ watch alarms fire without leaving their desk.
 | **Graceful fallback** | If location permission is denied or unavailable, the app switches to Simulation Mode and says so with a banner. |
 | **Onboarding** | A two-page intro explaining the idea and asking for permission. |
 | **Persistence** | Alarms are stored as JSON in `UserDefaults`; there is no account and no server. |
+
+![The New Alarm sheet with title, arrival/departure toggle, preset location and detection radius](assets/new-alarm.png)
+*Creating an alarm: a title, arrival or departure, a preset or typed location, and a radius.*
+
+![The New Alarm sheet scrolled to the map preview, showing the target pin and its radius circle](assets/map-preview.png)
+*The preview draws the target and its radius, so the region is visible before the alarm is saved.*
 
 ### The part worth reading
 
